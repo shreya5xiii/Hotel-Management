@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Index page</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style3.css">
+</head>
+<body>
+       
+    <div class="container" >
+        <div class="row justify-content-center"  >
+          <div class="card"  >
+             <div class="card-header text-center">
+                <span class="float-start" data-bs-toggle="tooltip" data-bs-placement="left" title="Go back to start chat" onclick="goBackToStartPage()"><i class="fa fa-arrow-left"></i></span>       
+                <h3>Check Out</h3>
+             </div>
+             <div class="card-body">
+             <form action="/checkout" method="post" id="form">
+                <div class="form-group row mt-2 ">
+                    <label for="roomno" class="col-md-4 text-md-right">Room Number</label>
+                    <div class="col-md-8">
+                    <input id="roomno" type="text" class="form-control" name="roomno" placeholder="Enter Room Number" required readonly>
+                    <span clas="text-danger" id="nameErr"></span>
+                    </div>
+                 </div>
+
+
+                 <div class="form-group row mt-2 ">
+                  <label for="custname" class="col-md-4 text-md-right">Name</label>
+                  <div class="col-md-8">
+                  <input id="custname" type="text" class="form-control" name="custname" placeholder="Enter Name" required readonly>
+                  </div>
+               </div>
+
+
+
+                
+               <div class="form-group row mt-2 ">
+                  <label for="indate" class="col-md-4 text-md-right">Date</label>
+                  <div class="col-md-8">
+                  <input id="indate" type="date" class="form-control" name="indate" placeholder="Enter date" required readonly>
+             
+                  </div>
+               </div>
+               <div class="form-group row mt-2 ">
+                  <label for="intime" class="col-md-4 text-md-right">Time</label>
+                  <div class="col-md-8">
+                  <input id="intime" type="time" class="form-control" name="intime" placeholder="Enter time" required readonly>
+             
+                  </div>
+               </div>
+               <div class="form-group row mt-2 ">
+                  <label for="outdate" class="col-md-4 text-md-right">Out Date</label>
+                  <div class="col-md-8">
+                  <input id="outdate" type="date" class="form-control" name="outdate" placeholder="Enter date" required >
+              
+                  </div>
+               </div>
+               <div class="form-group row mt-2 ">
+                  <label for="outtime" class="col-md-4 text-md-right"> Out Time</label>
+                  <div class="col-md-8">
+                  <input id="outtime" type="time" class="form-control" name="outtime" placeholder="Enter time" required >
+              
+                  </div>
+               </div>
+               
+               <div class="form-group row mt-2 ">
+                  <label for="deposite" class="col-md-4 text-md-right">Deposite</label>
+                  <div class="col-md-8">
+                  <input id="deposite" type="text" class="form-control" name="deposite" placeholder="Enter deposite value" required readonly>
+             
+                  </div>
+               </div>
+
+               <div class="form-group row mt-2 ">
+                  <label for="finalamount" class="col-md-4 text-md-right">finalamount</label>
+                  <div class="col-md-8">
+                  <input id="finalamount" type="text" class="form-control" name="finalamount" placeholder="Enter deposite value" required readonly>
+             
+                  </div>
+               </div>
+
+
+                  <div class="form-group row mt-4  ">
+                   <div class="col-md-4"></div>
+                     <div class="col-md-8">
+                     <button type="button" class="btn button" id="checkout" >
+                       Check Out
+                     </button>
+                        </div>
+                  </div>
+   
+             </form>
+             </div>
+            
+          </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script>
+          if(localStorage.getItem('loggedin_user_id')==""||localStorage.getItem('loggedin_user_id')==undefined||localStorage.getItem('loggedin_user_id')==null){
+        location.href="index.html";
+      }
+    function goBackToStartPage(){
+        window.location.href="welcome.html";
+    }
+    window.onload=roomno;
+    const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const encodedData = urlParams.get('argument');
+const decodedData = JSON.parse(decodeURIComponent(encodedData));
+var argument2 = decodeURIComponent(urlParams.get('argument2'));
+var argument3 = decodeURIComponent(urlParams.get('argument3'));
+
+   function roomno(){
+
+
+document.getElementById("roomno").value = decodedData[0].roomNo;
+document.getElementById("custname").value = decodedData[0].custname;
+document.getElementById("indate").value = decodedData[0].indate;
+document.getElementById("intime").value = decodedData[0].intime;
+document.getElementById("outdate").value = argument2;
+document.getElementById("outtime").value = argument3;
+document.getElementById("deposite").value = decodedData[0].deposite;
+
+// document.getElementById("finalamount").value =(decodedData[0].price- decodedData[0].deposite)*;
+const inDate = decodedData[0].indate;
+const inTime = decodedData[0].intime;
+const outDate = argument2;
+const outTime = argument3;
+const pricePerNight = decodedData[0].price;
+const totalPrice = calculateFinalPrice(inDate, inTime, outDate, outTime, pricePerNight);
+document.getElementById("finalamount").value=totalPrice-decodedData[0].deposite;
+
+   }
+
+
+   function calculateFinalPrice(inDate, inTime, outDate, outTime, pricePerNight) {
+    // Parse in and out dates and times into JavaScript Date objects
+    const checkInDateTime = new Date(inDate + 'T' + inTime);
+    const checkOutDateTime = new Date(outDate + 'T' + outTime);
+
+    // Calculate the difference in milliseconds between check-out and check-in
+    const timeDifferenceMs = checkOutDateTime - checkInDateTime;
+
+    // Calculate the number of nights spent in the hotel (rounding up)
+    const nightsSpent = Math.ceil(timeDifferenceMs / (1000 * 60 * 60 * 24));
+
+    // Calculate the final price based on the number of nights and price per night
+    const finalPrice = nightsSpent * pricePerNight;
+
+    return finalPrice;
+}
+    document.getElementById("checkout").addEventListener("click",async()=>{
+    
+
+
+            const form=document.getElementById("form");
+            const data=new FormData(form);
+            var object = {
+                dbName:localStorage.getItem("loggedin_user_name"),
+            };
+            data.forEach((value, key) => object[key] = value);
+            console.log(object)
+          await  fetch("/checkout", {
+            method: 'POST',
+            headers: {
+               'Accept': 'application/json',
+               'Content-Type': 'application/json'
+               },
+               body: JSON.stringify(object)
+            })
+            .then(response => {
+               if (!response.ok) {
+                     throw new Error('Network response was not ok');
+               }
+               return response.json();
+            })
+            .then(data => {
+              
+               window.alert("check out successfully!");
+            //    location.reload();
+               window.location="welcome.html";
+            
+            })
+            .catch(e=>{
+               window.alert("Room already exist or wrong information filled by you !!")
+            
+               // console.log("error",e);
+             })
+    })
+
+
+      </script>
+</body>
+</html>

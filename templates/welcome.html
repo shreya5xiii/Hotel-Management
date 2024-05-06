@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Index page</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+       <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navshadow ">
+            <div class="container-fluid" >
+                    <a href="#" class="navbar-brand">
+                        <img src="logo.jpg" height="70" alt="brang logo">
+                    </a> 
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+                        <i class="bs bi-list"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar1">
+                        <div class="navbar-nav ms-auto">
+                        <a href="#" class="nav-item nav-link  navitems activenav" onclick="home()">Home</a>
+                        <a href="#" class="nav-item nav-link  navitems" onclick="rooms()">Rooms</a>
+                        <a href="#" class="nav-item nav-link navitems" onclick="employee()">Employee</a>
+                        <a href="#" class="nav-item nav-link navitems" onclick="reception()">Reception</a>
+                        <a href="#" class="nav-item nav-link navitems"><span class="float-end" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout" onclick="logout()">Log Out <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a> 
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- welcome div -->
+        <div class="container" style="height: 70vh;"> 
+             <div class="div" >
+                  <h1 id="h1">WEL </h1>
+                  <h1 id="h2">COME</h1>
+             </div>
+             <div class="div" >
+                 <h3 id="hotelname">Hotel Swmami Delight</h3>
+             </div>
+       </div>
+
+
+
+  <div class=" roomsdiv"  >
+    <div class="container con2" >
+      <div class="row">
+          <div class="col-md-4 col-xl-3">
+              <div class="card bg-c-blue order-card">
+                  <div class="card-block">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <br>
+                        <h3 >Add Room</h3>
+                        <p>Add information of new room in hotel</p>
+                        <button class="btn" onclick="add()">click</button>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-md-4 col-xl-3">
+              <div class="card bg-c-green order-card">
+                  <div class="card-block">
+                    <i class="fa fa-refresh icon" aria-hidden="true"></i>
+                  <br>
+                  <h3>Update Room</h3>
+                  <p>Update the information of room in hotel</p>
+                      <button class="btn" onclick="update()">click</button>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-md-4 col-xl-3">
+              <div class="card bg-c-yellow order-card">
+                  <div class="card-block">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    <br>
+                    <h3>All Rooms</h3>
+                    <p>See information of all rooms in hotel</p>
+                        <button class="btn" onclick="list()">click</button>
+                 </div>
+              </div>
+          </div>
+          
+          <div class="col-md-4 col-xl-3">
+              <div class="card bg-c-pink order-card">
+                  <div class="card-block">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <br>
+                    <h3>Remove Room</h3>
+                    <p>remove the room form the hotel data </p>
+                        <button class="btn" onclick="remove()">click</button>
+                        </div>
+              </div>
+          </div>
+
+    </div>
+  </div>
+      </div>
+    
+
+     
+
+<div class=" employeediv"  >
+  <div class="container con2" >
+    <div class="row">
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                      <br>
+                      <h3 >Add staff</h3>
+                      <p>Add information of new staff in hotel</p>
+                      <button class="btn" onclick="addemp()">click</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                  <i class="fa fa-refresh icon" aria-hidden="true"></i>
+                <br>
+                <h3>Update staff</h3>
+                <p>Update the information of staff in hotel</p>
+                    <button class="btn" onclick="updateemp()">click</button>
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                  <i class="fa fa-list" aria-hidden="true"></i>
+                  <br>
+                  <h3>List of staff</h3>
+                  <p>See the information of all staff in hotel</p>
+                      <button class="btn" onclick="listemp()">click</button>
+               </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  <br>
+                  <h3>Remove staff</h3>
+                  <p>Remove the employee from hotel staff </p>
+                      <button class="btn" onclick="deleteemp()">click</button>
+                      </div>
+            </div>
+        </div>
+
+  </div>
+</div>
+    </div>
+
+
+
+    <div class=" roomsdiv"  >
+        <div class="container con2" >
+          <div class="row">
+              <div class="col-md-4 col-xl-3">
+                  <div class="card bg-c-blue order-card">
+                      <div class="card-block">
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                            <br>
+                            <h3 >Book Room</h3>
+                            <p>Book any of the available room of hotel</p>
+                            <button class="btn" onclick="book()">click</button>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-4 col-xl-3">
+                  <div class="card bg-c-green order-card">
+                      <div class="card-block">
+                        <i class="fa fa-suitcase" aria-hidden="true"></i>
+                      <br>
+                      <h3>Check Out</h3>
+                      <p>Check out the hotel and pay remaining bill </p>
+                          <button class="btn" onclick="checkout()">click</button>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-4 col-xl-3">
+                  <div class="card bg-c-yellow order-card">
+                      <div class="card-block">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                        <br>
+                        <h3> Client record</h3>
+                        <p>history of customer stayed hotel uptill now</p>
+                            <button class="btn" onclick="clienthistory()">click</button>
+                     </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-4 col-xl-3">
+                  <div class="card bg-c-pink order-card">
+                      <div class="card-block">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <br>
+                        <h3>staff record</h3>
+                        <p>history of all the employees uptill now</p>
+                            <button class="btn" onclick="emphist()">click</button>
+                            </div>
+                  </div>
+              </div>
+    
+        </div>
+      </div>
+          </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script>
+         if(localStorage.getItem('loggedin_user_id')==""||localStorage.getItem('loggedin_user_id')==undefined||localStorage.getItem('loggedin_user_id')==null){
+        location.href="index.html";
+      }
+
+     $(document).ready(function(){
+        $('.navitems').each(function() { 
+            $(this).click(function() {
+                $('.navitems').removeClass('activenav');
+                $(this).addClass('activenav');
+                $(this).style="color:white;"
+            });
+        });
+    });
+    let a;
+         a=window.innerHeight;
+ 
+    function home(){
+         window.scrollTo({top:0,behavior:"smooth"});
+    }
+    function rooms(){
+         window.scrollTo({top:682,behavior:"smooth"});
+    }
+    function employee(){
+         window.scrollTo({top:1370,behavior:"smooth"});
+    }
+    function reception(){
+         window.scrollTo({top:2740,behavior:"smooth"});
+    }
+    function logout() {
+    // Delete data from localStorage
+    localStorage.removeItem('loggedin_user_email');
+    localStorage.removeItem('loggedin_user_id');
+    localStorage.removeItem('loggedin_user_name');
+    
+    // Redirect to index.html
+    window.location = "index.html";
+}
+
+    function add(){
+        window.location.href="addroom.html";
+    }
+    function update(){
+        window.location.href="updateroom.html";
+    }
+    function list(){
+        window.location.href="allroom.html";
+    }
+    function remove(){
+        window.location.href="deleteroom.html";
+    }
+    function addemp(){
+        window.location.href="addemployee.html";
+    }
+    function updateemp(){
+        window.location.href="updateemployee.html";
+    }
+    function listemp(){
+        window.location.href="allemployee.html";
+    }
+    function deleteemp(){
+        window.location.href="deleteemployee.html";
+    }
+    function book(){
+        window.location.href="bookroom.html";
+    }
+    function checkout(){
+        window.location.href="checkoutroom.html";
+    }
+    function emphist(){
+        window.location.href="employeehistory.html";
+    }
+    
+    function clienthistory(){
+        window.location.href="clienthistory.html";
+    }
+      </script>
+</body>
+</html>

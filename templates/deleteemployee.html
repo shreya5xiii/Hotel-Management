@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign up</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style3.css">
+<script>try{Typekit.load({async:true});}catch(e){}</script>
+</head>
+<body>
+  <div class="container choiceform " >
+    <form >
+      
+
+        
+      <div class="form-group row mt-2 ">
+        <label for="empid" class="col-md-4 text-md-right">Employee ID</label>
+        <div class="col-md-8">
+        <input id="empid" type="text" class="form-control" name="empid" placeholder="Enter Employee ID" required >
+   
+        </div>
+     </div>
+
+   
+
+        <div class="form-group row mt-4  ">
+         <div class="col-md-4"></div>
+           <div class="col-md-8">
+           <button type="button" class="btn button" id="deleteemp" >
+             Delete
+           </button>
+              </div>
+        </div>
+
+    </form>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <script src="validation.js"></script>
+    <script>
+     if(localStorage.getItem('loggedin_user_id')==""||localStorage.getItem('loggedin_user_id')==undefined||localStorage.getItem('loggedin_user_id')==null){
+        location.href="index.html";
+      }
+    document.getElementById("deleteemp").addEventListener("click",async()=>{
+      const dbName=localStorage.getItem("loggedin_user_name")
+      const empid=document.getElementById("empid").value;
+    fetch(`/Deleteemp?empid=${empid}&dbName=${dbName}`)
+        .then(response => response.json())
+        .then(data => {
+          //  console.log(data);
+               if(data.length!=0){
+               
+             
+                window.alert("employee deleted successfully")
+               window.location.href = "welcome.html"
+               }
+        })
+        .catch(error =>  window.alert("employee not exist"));
+   })
+    </script> 
+</body>
+</html>
+
+<!-- 
+var argupara=(window.location.search.split('argument=')[1]|| '').split('&')[0];
+window.location.href="voting_voter.html?argument="+argument; -->
